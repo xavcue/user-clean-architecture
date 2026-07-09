@@ -8,6 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class UserResponse {
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
 }

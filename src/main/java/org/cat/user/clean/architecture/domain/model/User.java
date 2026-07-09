@@ -2,30 +2,27 @@ package org.cat.user.clean.architecture.domain.model;
 
 public class User {
     private String firstName;
-    private String LastName;
+    private String lastName;
     private String email;
     private String phone;
 
-    //Contructor
     public User(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
-        LastName = lastName;
+        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
     }
 
-    //Metodos sobreescritos
     @Override
     public String toString() {
         return "User{" +
                 "firstName='" + firstName + '\'' +
-                ", LastName='" + LastName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
     }
 
-    //Otros metodos publicos o privados
     public String getFirstName() {
         return firstName;
     }
@@ -35,11 +32,11 @@ public class User {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getEmail() {

@@ -21,7 +21,7 @@ public class UserEntity {
     private UUID id;
 
     private String firstName;
-    private String LastName;
+    private String lastName;
     private String email;
     private String phone;
 }

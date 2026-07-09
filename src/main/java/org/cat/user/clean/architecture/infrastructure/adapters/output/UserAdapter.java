@@ -5,6 +5,8 @@ import org.cat.user.clean.architecture.domain.model.User;
 import org.cat.user.clean.architecture.infrastructure.adapters.output.mapper.UserEntityMapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class UserAdapter implements UserPort {
 
@@ -22,4 +24,18 @@ public class UserAdapter implements UserPort {
         return UserEntityMapper.INSTANCE.toUser(userEntity);
     }
 
+    public List<User> findAll(){
+        List<UserEntity> userEntities = repository.findAll();
+        return userEntities.stream()
+                .map(UserEntityMapper.INSTANCE ::toUser)
+                .toList();
+    }
+
+    @Override
+    public List<User> filterByLastName(String lastName) {
+        return repository.findByLastNameContainingIgnoreCase(lastName)
+                .stream()
+                .map(UserEntityMapper.INSTANCE::toUser)
+                .toList();
+    }
 }
